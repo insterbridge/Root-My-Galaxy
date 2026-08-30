@@ -13,6 +13,7 @@ class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != Intent.ACTION_BOOT_COMPLETED) return
         if (NativeProbe.isKernelSuActive()) return
+        if (!AppPreferences.bootRootMode(context)) return
         BootInstallService.start(context)
     }
 }

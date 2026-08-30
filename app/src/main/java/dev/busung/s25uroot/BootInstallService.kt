@@ -118,7 +118,7 @@ class BootInstallService : Service() {
             val channel = NotificationChannel(
                 CHANNEL_ID,
                 getString(R.string.notification_channel_boot),
-                NotificationManager.IMPORTANCE_LOW,
+                NotificationManager.IMPORTANCE_DEFAULT,
             )
             getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
         }
